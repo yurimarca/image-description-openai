@@ -1,0 +1,4 @@
+numpy==1.24.4
+openai==1.61.1
+opencv_python_headless==4.11.0.86
+tqdm==4.67.1
