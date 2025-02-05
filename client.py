@@ -4,7 +4,8 @@ import openai
 
 from utils import encode_image
 
-def api_call(custom_prompt: str) -> str:
+def api_call(client : openai.OpenAI,
+             custom_prompt: str) -> str:
     """
     API call to OpenAI's GPT-4o-mini model for a given prompt.
     This is a simple function that sends a prompt to the model and
@@ -12,6 +13,7 @@ def api_call(custom_prompt: str) -> str:
     Reference: https://platform.openai.com/docs/guides/text-generation
 
     Inputs:
+        client (openai.OpenAI): The OpenAI client
         custom_prompt (str): The prompt to be sent to the model
 
     Output:
@@ -19,9 +21,6 @@ def api_call(custom_prompt: str) -> str:
     """
 
     try:
-        # Instanciate OpenAI client
-        client = openai.OpenAI()
-
         # Send prompt
         response = client.chat.completions.create(
             model="gpt-4o-mini",
@@ -35,11 +34,12 @@ def api_call(custom_prompt: str) -> str:
             ]
         )
         # Extract and return the reply
-        return response.choices[0].message
+        return response.choices[0].message.content
     except Exception as e:
         return f"ERROR: {e}"
 
-def vision_api_call(img_path: str,
+def vision_api_call(client: openai.OpenAI,
+                    img_path: str,
                     custom_prompt: str = "What is in this image?") -> str:
     """
     API call to OpenAI's GPT-4o-mini model for a given prompt and image.
@@ -48,6 +48,7 @@ def vision_api_call(img_path: str,
     Reference: https://platform.openai.com/docs/guides/vision
 
     Inputs:
+        client (openai.OpenAI): The OpenAI client
         img_path (str): The path to the image to be sent to the model
         custom_prompt (str): The prompt to be sent to the model
     
@@ -56,9 +57,6 @@ def vision_api_call(img_path: str,
     """
 
     try:
-        # Instanciate OpenAI client
-        client = openai.OpenAI()
-
         # Getting the Base64 string
         base64_image = encode_image(img_path)
 
@@ -83,7 +81,7 @@ def vision_api_call(img_path: str,
         )
 
         # Extract and return the reply
-        return response.choices[0].message
+        return response.choices[0].message.content
     except Exception as e:
         return f"An error occurred: {e}"
 
@@ -111,7 +109,10 @@ if __name__ == "__main__":
 
     args = parser.parse_args()
 
+    # Instantiate the OpenAI client
+    client = openai.OpenAI()
+
     if args.prompt is None:
-        print(vision_api_call(args.img_path))
+        print(vision_api_call(client, args.img_path))
     else:
-        print(vision_api_call(args.img_path, args.prompt))
+        print(vision_api_call(client, args.img_path, args.prompt))
