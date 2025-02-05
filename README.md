@@ -79,7 +79,7 @@ image-description-openai/
 
 ### 5. **Amostragem Visual dos Resultados**
 
-- É possível chamar a função `utils.py` para gerar um sample dos resultados através de uma apresentação visual.
+- É possível chamar a função `utils.py` para gerar um sample dos resultados através de uma apresentação visual. **Note:** This assumes the folder `results/` exists and contains the file `resultado.json`
 	```sh
 	python src/utils.py
 	```
