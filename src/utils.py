@@ -27,10 +27,10 @@ def is_valid_image(filename: str) -> bool:
     Reference: https://platform.openai.com/docs/guides/vision
 
     Inputs:
-        filename (str): Nome do arquivo
+        filename (str): Name of the image file
 
     Output:
-        bool: True se o arquivo for uma imagem válida, False caso contrário.
+        bool: True if the image file is valid.
     """
 
     valid_extensions = {".png", ".jpeg", ".jpg", ".webp", ".gif"}
@@ -57,7 +57,7 @@ def check_output_file(output: str) -> bool:
     Check if the output file exists.
 
     Inputs:
-        output (str): Nome do arquivo de saída
+        output (str): Name path of the output file
         """
     return os.path.exists(output)
 
@@ -68,7 +68,7 @@ def produce_result_sample(image_path: str, text: str, output_img: str):
 
     Inputs:
         image_path (str): Path to the input image.
-        text (str): The text to overlay (e.g., OpenAI's response).
+        text (str): The text from OpenAI's response.
         output_img (str): File name of new image.
 
     Output:
@@ -141,7 +141,7 @@ def produce_result_sample(image_path: str, text: str, output_img: str):
 
 if __name__ == "__main__":
     # Check output file
-    if check_output_file("resultado.json"):
+    if check_output_file("results/resultado.json"):
         # Read the JSON file as a dictionary
         with open("resultado.json", "r") as file:
             json_data = json.load(file)
@@ -151,5 +151,5 @@ if __name__ == "__main__":
         # Test the overlay_text_on_image function
         image_path = "images/" + sample[0]
         text = sample[1]
-        output_img = "sample_result.png"
+        output_img = "results/sample_result.png"
         produce_result_sample(image_path, text, output_img)

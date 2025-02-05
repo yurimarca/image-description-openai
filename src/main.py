@@ -2,6 +2,7 @@ import argparse
 import json
 import logging
 import time
+import os
 
 import openai
 
@@ -15,7 +16,9 @@ logger = logging.getLogger()
 logger.setLevel(logging.INFO)
 
 # Create a file handler
-file_handler = logging.FileHandler("log.txt", mode="w")
+if not os.path.exists("results"):
+    os.makedirs("results")
+file_handler = logging.FileHandler("results/log.txt", mode="w")
 file_handler.setLevel(logging.INFO)
 
 # Create a console handler
@@ -121,7 +124,7 @@ if __name__ == "__main__":
         type=str,
         help="Nome do arquivo de saída",
         required=False,
-        default="resultado.json")
+        default="results/resultado.json")
     
     parser.add_argument(
         "--batch-size",
