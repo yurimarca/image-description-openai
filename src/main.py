@@ -1,3 +1,13 @@
+"""
+Main file to run a batch of api calls to openai's vision API.
+This function reads images from a folder, sends them to the vision API,
+and saves the results in a JSON file.
+
+Author: Yuri Marca
+Date: 2025-02-04
+"""
+
+
 import argparse
 import json
 import logging
@@ -46,7 +56,7 @@ def main(folder: str, prompt: str, output: str, limit_batch_size: int):
         prompt (str): The prompt to be sent to the model
         output (str): The name of the output file
         limit_batch_size (int): The maximum number of images to send in a batch
-    
+
     Output:
         Generates a JSON file with the results of the API calls
     """
@@ -87,7 +97,8 @@ def main(folder: str, prompt: str, output: str, limit_batch_size: int):
         results[img] = response
 
     # Compute the time taken for batch inference
-    logger.info(f"Tempo total de inferência: {time.time() - start:.2f} segundos")
+    logger.info(
+        f"Tempo total de inferência: {time.time() - start:.2f} segundos")
 
     # Check dictionary results
     logger.debug(f"Resultados: {results}")
@@ -102,39 +113,39 @@ def main(folder: str, prompt: str, output: str, limit_batch_size: int):
     else:
         logger.error("Erro ao salvar os resultados")
 
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    
+
     parser.add_argument(
         "--folder",
         type=str,
         help="Caminho para a pasta de imagens",
         required=False,
         default="images/")
-    
+
     parser.add_argument(
         "--prompt",
         type=str,
         help="Prompt para a descrição das imagens",
         required=False,
         default="Descreva apenas a vestimenta presente na imagem")
-    
+
     parser.add_argument(
         "--output-file",
         type=str,
         help="Nome do arquivo de saída",
         required=False,
         default="results/resultado.json")
-    
+
     parser.add_argument(
         "--batch-size",
         type=int,
         help="Quantidade máxima de imagens para processar",
         required=False,
         default=1000)
-    
+
     args = parser.parse_args()
 
     main(args.folder, args.prompt,
          args.output_file, args.batch_size)
-

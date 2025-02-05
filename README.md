@@ -61,7 +61,7 @@ image-description-openai/
 	```sh
 	python src/main.py --folder images/ \
 			--prompt "Descreva a roupa na imagem." \
-			--output results/resultados.json \
+			--output results/resultado.json \
 			--batch-size 10
 	```
 - Ou simplesmente utilize os argumentos default:
@@ -94,12 +94,10 @@ Iniciei o projeto acessando a documentação da OpenAI para rapidamente produzir
 
 Com essa base inicial, planejei três fases de desenvolvimento, todas realizadas na branch `developing`, com cada fase resultando em um Pull Request (PR):
 
-**1. Ler imagens e enviá-las via API Vision (PR: API Vision successful call)**
-
-**2. Processamento e inferência das imagens em batches (PR: Batch API Processing and Sample Image Result);**
-
-**3. Paralelizar chamadas à API para um processamento mais rápido e escalável.**
-
+1. **Ler imagens e enviá-las via API Vision (PR: API Vision successful call)**	
+2. **Processamento e inferência das imagens em batches (PR: Batch API Processing and Sample Image Result);**
+3. **Paralelizar chamadas à API para um processamento mais rápido e escalável.**
+	
 Os PRs seguiram a seguinte sequência:
 
 ### 1. API Vision successful call
