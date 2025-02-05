@@ -4,6 +4,7 @@
 
 O objetivo deste projeto é desenvolver um sistema que gera descrições detalhadas de roupas contidas em imagens, utilizando a API da OpenAI. A aplicação lê imagens de uma pasta designada, envia cada imagem juntamente com um prompt customizado para a API, e retorna a descrição gerada para cada imagem. O sistema gera um artefato de saída no formato JSON que relaciona o nome dos arquivos das imagens com a descrição produzida através da chamada de API da OpenAI.
 
+Link para repositorio: [https://github.com/yurimarca/image-description-openai](https://github.com/yurimarca/image-description-openai)
 
 ## Estrutura do Projeto
 
@@ -79,7 +80,7 @@ image-description-openai/
 
 ### 5. **Amostragem Visual dos Resultados**
 
-- É possível chamar a função `utils.py` para gerar um sample dos resultados através de uma apresentação visual. **Note:** This assumes the folder `results/` exists and contains the file `resultado.json`
+- É possível chamar a função `utils.py` para gerar um sample dos resultados através de uma apresentação visual. **Observação:** Essa chamada pressupõe que a pasta `results/` existe e contém o arquivo `resultado.json`.
 	```sh
 	python src/utils.py
 	```
