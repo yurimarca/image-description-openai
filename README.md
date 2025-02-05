@@ -26,7 +26,7 @@ image-description-openai/
 ### 1. **Instalar as Dependências**
 
    - Em um computador Linux, crie um ambiente virtual Python e instale as dependências via `pip`:
-	   ```bash
+	   ```sh
 	   python -m venv openai_venv
 	   source openai_venv/bin/activate
 
@@ -36,7 +36,7 @@ image-description-openai/
 ### 2. **Configurar a Chave da API**
 
    - Certifique-se de configurar a variável de ambiente com chave da API da OpenAI:
-	   ```bash
+	   ```sh
 	   export OPENAI_API_KEY='sua-chave-aqui'
 	   ```
    - Esta configuração é necessária a cada inicialização do sistema. Para certificar-se que a chave estará sempre instanciada de forma segura, podemos simplemente adiciona-la na nossa inicialização do shell. Segue uma  [Referência](https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety) que utiliza o `zsh`:
@@ -52,38 +52,41 @@ image-description-openai/
 		- Confirme que a variável de ambiente foi definida corretamente:  
 		   ```sh
 		   echo $OPENAI_API_KEY
-		   ```  
+		   ```
 
 ### 3. **Batch Processamento de Imagens**
 
-   - Para processar uma pasta inteira de imagens e salvar os resultados em um arquivo JSON:
-   ```bash
-   python main.py --folder images/ --prompt "Descreva a roupa na imagem." --output resultados.json --batch-size 10
-   ```
+- Para processar uma pasta inteira de imagens e salvar os resultados em um arquivo JSON:
 
-	- Ou simplesmente utilize os argumentos default:
-	
-	```bash
+	```sh
+	python main.py --folder images/ \
+					  --prompt "Descreva a roupa na imagem." \
+					  --output resultados.json \
+					  --batch-size 10
+	```
+- Ou simplesmente utilize os argumentos default:
+
+	```sh
 	python main.py
 	```
 	
 ### 4. **Testar a API call**
 
-   - É possível testar a chamada à API usando o `client.py`:
-   ```bash
+- É possível testar a chamada à API usando o `client.py`:
+   ```sh
    python client.py --img-path "images/Gen AI Test_imagens_-2015-Women-two-pieces-set-summer-jumpsuit-solid-Lace-stitching-tassel-backless-hollow-out-rompers.jpg_220x220.jpg" --prompt "Descreva a roupa na imagem."
    ```
 
 ### 5. **Amostragem Visual dos Resultados**
 
-	- É possível chamar a função `utils.py` para gerar um sample dos resultados através de uma apresentação visual.
-		```bash
-		python utils.py
-		```
-		
-	- **Exemplo:**
+- É possível chamar a função `utils.py` para gerar um sample dos resultados através de uma apresentação visual.
+	```sh
+	python utils.py
+	```
+	
+- **Exemplo:**
 
-	![sample_result](sample_result.png)
+	![sample_result](results/sample_result.png)
 
 ## Estratégia de Design e Desenvolvimento
 
