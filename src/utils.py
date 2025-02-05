@@ -141,14 +141,15 @@ def produce_result_sample(image_path: str, text: str, output_img: str):
 
 if __name__ == "__main__":
     # Check output file
-    if check_output_file("results/resultado.json"):
+    output_file = "results/resultado.json"
+    if check_output_file(output_file):
         # Read the JSON file as a dictionary
-        with open("resultado.json", "r") as file:
+        with open(output_file, "r") as file:
             json_data = json.load(file)
         # Sample an item from json
         sample = random.sample(list(json_data.items()), 1)[0]
 
-        # Test the overlay_text_on_image function
+        # Call function to produce an image with text
         image_path = "images/" + sample[0]
         text = sample[1]
         output_img = "results/sample_result.png"
