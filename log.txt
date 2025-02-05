@@ -1,8 +1,26 @@
-2025-02-04 23:25:32,160 - INFO - Iniciando o processamento de imagens
-2025-02-04 23:25:32,161 - INFO - Processando imagens na pasta images/
-2025-02-04 23:25:32,161 - INFO - Encontradas 196 imagens
-2025-02-04 23:25:32,219 - INFO - Inicializado o cliente OpenAI
-2025-02-04 23:25:37,251 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
-2025-02-04 23:25:40,142 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
-2025-02-04 23:25:40,145 - INFO - Tempo total de inferência: 7.93 segundos
-2025-02-04 23:25:40,145 - INFO - Resultados salvos em resultado.json
+2025-02-05 00:15:55,956 - INFO - Iniciando o processamento de imagens
+2025-02-05 00:15:55,956 - INFO - Processando imagens na pasta images/
+2025-02-05 00:15:55,956 - INFO - Encontradas 196 imagens
+2025-02-05 00:15:56,001 - INFO - Inicializado o cliente OpenAI
+2025-02-05 00:15:59,331 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-05 00:16:02,278 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-05 00:16:05,884 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-05 00:16:09,264 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-05 00:16:11,647 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-05 00:16:14,281 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-05 00:16:17,149 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-05 00:16:20,323 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-05 00:16:26,467 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-05 00:16:29,531 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-05 00:16:32,407 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-05 00:16:35,478 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-05 00:16:39,677 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-05 00:16:42,339 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-05 00:16:45,136 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-05 00:16:48,552 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-05 00:16:51,145 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-05 00:16:54,422 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-05 00:16:58,211 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-05 00:17:02,684 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-05 00:17:02,686 - INFO - Tempo total de inferência: 66.68 segundos
+2025-02-05 00:17:02,687 - INFO - Resultados salvos em resultado.json
