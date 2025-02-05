@@ -70,17 +70,18 @@ def vision_api_call(client: openai.OpenAI,
         base64_image = encode_image(img_path)
 
         # Send prompt
-        response = client.chat.completions.create(model="gpt-4o-mini",
-                                                  messages=[{"role": "user",
-                                                             "content": [{"type": "text",
-                                                                          "text": custom_prompt,
-                                                                          },
-                                                                         {"type": "image_url",
-                                                                          "image_url": {"url": f"data:image/jpeg;base64,{base64_image}"},
-                                                                          },
-                                                                         ],
-                                                             }],
-                                                  )
+        response = client.chat.completions.create(
+            model="gpt-4o-mini",
+            messages=[{"role": "user",
+                        "content": [{"type": "text",
+                                    "text": custom_prompt,
+                                    },
+                                    {"type": "image_url",
+                                    "image_url": {"url": f"data:image/jpeg;base64,{base64_image}"},
+                                    },
+                                    ],
+                        }],
+            )
 
         # Extract and return the reply
         return response.choices[0].message.content
