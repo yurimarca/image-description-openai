@@ -128,7 +128,7 @@ if __name__ == "__main__":
         type=int,
         help="Quantidade máxima de imagens para processar",
         required=False,
-        default=10)
+        default=1000)
     
     args = parser.parse_args()
 

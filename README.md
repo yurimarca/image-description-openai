@@ -9,7 +9,7 @@ O objetivo deste projeto é desenvolver um sistema que gera descrições detalha
 ```
 image-description-openai/
 ├── client.py          # Módulo para estabelecer a conexão com a API da OpenAI
-├── main.py            # Script principal que processa uma pasta de imagens
+├── main.py            # Script principal que processa uma batch de imagens
 ├── utils.py           # Funções utilitárias para manipulação de imagens e arquivos
 └── requirements.txt   # Dependências do projeto
 ```
@@ -18,7 +18,7 @@ image-description-openai/
 
 1. **Instalar as Dependências:**
 
-   Em um computador Linux, crie um ambiente virtual e instale as dependências:
+   - Em um computador Linux, crie um ambiente virtual e instale as dependências:
    ```bash
    python -m venv venv
    source venv/bin/activate
@@ -28,25 +28,40 @@ image-description-openai/
 
 2. **Configurar a Chave da API:**
 
-   Certifique-se de configurar a variável de ambiente com chave da API da OpenAI:
+   - Certifique-se de configurar a variável de ambiente com chave da API da OpenAI:
    ```bash
    export OPENAI_API_KEY='sua-chave-aqui'
    ```
 
 3. **Testar a API com um Único Arquivo:**
 
-   Você pode testar a chamada à API usando o `client.py`:
+   - Você pode testar a chamada à API usando o `client.py`:
    ```bash
-   python client.py --img-path images/Gen AI Test_imagens_-2015-Women-two-pieces-set-summer-jumpsuit-solid-Lace-stitching-tassel-backless-hollow-out-rompers.jpg_220x220.jpg --prompt "Descreva a roupa na imagem."
+   python client.py --img-path "images/Gen AI Test_imagens_-2015-Women-two-pieces-set-summer-jumpsuit-solid-Lace-stitching-tassel-backless-hollow-out-rompers.jpg_220x220.jpg" --prompt "Descreva a roupa na imagem."
    ```
 
-4. **Processar uma Pasta de Imagens:**
+4. **Batch de Imagens:**
 
-   Para processar uma pasta inteira de imagens e salvar os resultados em um arquivo JSON:
+   - Para processar uma pasta inteira de imagens e salvar os resultados em um arquivo JSON:
    ```bash
-   python main.py --folder caminho/para/pasta_de_imagens --prompt "Descreva a roupa na imagem." --output resultados.json
+   python main.py --folder images/ --prompt "Descreva a roupa na imagem." --output resultados.json --batch-size 10
    ```
+	
+	- Ou simplesmente:
+	```bash
+   python main.py
+	```
 
+
+5. **Amostragem Visual dos Resultados**
+
+	- E possivel chamar a funcao `utils.py` para gerar um sample dos resultados atraves de uma apresentacao visual.
+	```bash
+	python utils.py
+	```
+	- **Exemplo:**
+
+	![sample_result](sample_result.png)
 
 ## Comments:
 
