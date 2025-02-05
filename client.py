@@ -34,7 +34,7 @@ def api_call(client : openai.OpenAI,
             ]
         )
         # Extract and return the reply
-        return response.choices[0].message
+        return response.choices[0].message.content
     except Exception as e:
         return f"ERROR: {e}"
 
@@ -81,7 +81,7 @@ def vision_api_call(client: openai.OpenAI,
         )
 
         # Extract and return the reply
-        return response.choices[0].message
+        return response.choices[0].message.content
     except Exception as e:
         return f"An error occurred: {e}"
 

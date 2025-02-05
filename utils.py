@@ -20,10 +20,10 @@ def is_valid_image(filename: str) -> bool:
     Check if image file extension is valid according with ref.
     Reference: https://platform.openai.com/docs/guides/vision
     
-    Args:
+    Inputs:
         filename (str): Nome do arquivo
     
-    Returns:
+    Output:
         bool: True se o arquivo for uma imagem válida, False caso contrário.
     """
 
@@ -36,10 +36,22 @@ def list_images(folder: str) -> list:
     List all images in a folder.
     Reference: https://platform.openai.com/docs/guides/vision
     
-    Args:
+    Inputs:
         folder (str): Folder path
     
-    Returns:
+    Output:
         list: list of image files in the folder
     """
     return [f for f in os.listdir(folder) if is_valid_image(f)]
+
+def check_output_file(output: str) -> bool:
+    """
+    Check if the output file is a JSON file.
+    
+    Inputs:
+        output (str): Nome do arquivo de saída
+    
+    Output:
+        bool: True se o arquivo for um arquivo JSON, False caso contrário.
+    """
+    return output.endswith(".json")

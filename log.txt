@@ -1,0 +1,8 @@
+2025-02-04 23:25:32,160 - INFO - Iniciando o processamento de imagens
+2025-02-04 23:25:32,161 - INFO - Processando imagens na pasta images/
+2025-02-04 23:25:32,161 - INFO - Encontradas 196 imagens
+2025-02-04 23:25:32,219 - INFO - Inicializado o cliente OpenAI
+2025-02-04 23:25:37,251 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-04 23:25:40,142 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-04 23:25:40,145 - INFO - Tempo total de inferência: 7.93 segundos
+2025-02-04 23:25:40,145 - INFO - Resultados salvos em resultado.json
