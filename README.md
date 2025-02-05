@@ -59,44 +59,46 @@ image-description-openai/
 - Para processar uma pasta inteira de imagens e salvar os resultados em um arquivo JSON:
 
 	```sh
-	python main.py --folder images/ \
-					  --prompt "Descreva a roupa na imagem." \
-					  --output resultados.json \
-					  --batch-size 10
+	python src/main.py --folder images/ \
+			--prompt "Descreva a roupa na imagem." \
+			--output results/resultados.json \
+			--batch-size 10
 	```
 - Ou simplesmente utilize os argumentos default:
 
 	```sh
-	python main.py
+	python src/main.py
 	```
 	
 ### 4. **Testar a API call**
 
 - É possível testar a chamada à API usando o `client.py`:
    ```sh
-   python client.py --img-path "images/Gen AI Test_imagens_-2015-Women-two-pieces-set-summer-jumpsuit-solid-Lace-stitching-tassel-backless-hollow-out-rompers.jpg_220x220.jpg" --prompt "Descreva a roupa na imagem."
+   python src/client.py --img-path "images/Gen AI Test_imagens_-2015-Women-two-pieces-set-summer-jumpsuit-solid-Lace-stitching-tassel-backless-hollow-out-rompers.jpg_220x220.jpg" --prompt "Descreva a roupa na imagem."
    ```
 
 ### 5. **Amostragem Visual dos Resultados**
 
 - É possível chamar a função `utils.py` para gerar um sample dos resultados através de uma apresentação visual.
 	```sh
-	python utils.py
+	python src/utils.py
 	```
 	
 - **Exemplo:**
 
 	![sample_result](results/sample_result.png)
 
-## Estratégia de Design e Desenvolvimento
+## Design e Estratégia de Desenvolvimento
 
 Iniciei o projeto acessando a documentação da OpenAI para rapidamente produzir uma função Python em `client.py` que realizasse chamadas à API com prompts customizados. Esse foi o primeiro passo de implementação: analisar a documentação, configurar o ambiente Python com os pacotes necessários, configurar a chave da API e criar um código simples para testar a conexão com a API.
 
 Com essa base inicial, planejei três fases de desenvolvimento, todas realizadas na branch `developing`, com cada fase resultando em um Pull Request (PR):
 
-1. Ler imagens e enviá-las via API Vision;
-2. Processamento e inferência das imagens em batches (lote com todas images da pasta);
-3. Paralelizar chamadas à API para um processamento mais rápido e escalável.
+**1. Ler imagens e enviá-las via API Vision (PR: API Vision successful call)**
+
+**2. Processamento e inferência das imagens em batches (PR: Batch API Processing and Sample Image Result);**
+
+**3. Paralelizar chamadas à API para um processamento mais rápido e escalável.**
 
 Os PRs seguiram a seguinte sequência:
 
